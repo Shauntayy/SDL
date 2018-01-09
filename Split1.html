@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+   ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(60,106,157,0.93);;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 40px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: rgba(60,106,157,0.93);;
+}
+
+  #log{
+      float:right;
+
+  }
+    #log1{
+        float:right;
+    }
+
+
+
+.dropbtn {
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+     background-color:rgba(60,106,157,0.93);;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color:rgba(60,106,157,0.93);;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    background-color: rgba(60,106,157,0.93);;
+    min-width: 160px;
+    overflow: auto;
+
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: rgba(60,106,157,0.93);;}
+
+.show {display:block;}
+
+
+
+
+   #wholething{
+       float:left;
+
+        background-color:#eee;
+        padding-right:10%;
+        padding-left:3%;
+        padding-bottom:15%;
+   }
+
+
+
+    #wholething2{
+
+        float:left;
+
+        background-color:#eee;
+        padding-bottom:10%;
+       margin-left:0.5%;
+        padding-right:27.16%;
+        padding-left:5%;
+
+    }
+
+    #wholething3{
+
+        float:left;
+        background-color:#eee;
+        padding-top:5%;
+        padding-right:23%;
+        padding-left:5%;
+        padding-bottom:15%;
+        margin-left:0.5%;
+        margin-top:0.5%;
+    }
+    #new{
+        font-weight:bold;
+    }
+    #contact{
+        padding-left:41%;
+    }
+    #contact1{
+        padding-left:43%;
+    }
+    #names{
+        font-weight:bold;
+    }
+    #contacts{
+    font-weight:bold;
+    padding-left:41%;
+    }
+</style>
+<body>
+<ul>
+
+  <li><a href="#home">Home</a></li>
+
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About Us</a></li>
+    <li id="log1"><a href="#log">Logout</a></li>
+    <li id="log">
+
+<div class="dropdown">
+<button onclick="myFunction()" class="dropbtn">You have 7 new messages</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#home">Request from Keith</a>
+    <a href="#about">Request from Shaun</a>
+    <a href="#contact">Request from Tristan</a>
+  </div>
+</div>
+
+</li>
+
+</ul>
+
+<script>
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+};
+function secondfunction(){
+    var choose=document.getElementById("mySelect").value;
+  localStorage.setItem('ms',choose);
+    var var1=localStorage.getItem('ms');
+        if (var1==='c1'){
+            location.href = "http://127.0.0.1:5000/Equal"
+        }
+        if (var1==='c2'){
+            location.href = "http://127.0.0.1:5000/Basedonrecipient"
+        }
+        if (var1==='c3'){
+            location.href = "http://127.0.0.1:5000/Customize"
+        }
+}
+
+</script>
+<br>
+  <span id="wholething">
+    <h2>Split Bill Recipients</h2>
+
+
+      <div id="new">Add new recipients</div>
+      <br>
+
+Search through list of friends: <input type="text" placeholder="Contact No./Name"> <input type="button" value="search">
+      <br>
+      <br>
+      Search through new list of people: <input type="text" placeholder="Contact No./Name"> <input type="button" value="search">
+     <br>
+      <br>
+      <h2>Added to List</h2>
+      <span id="names">Name</span>
+
+      <span id="contacts">Contact Number</span>
+      <br>
+      <br>
+      <span id="name">John</span>
+      <span id="contact1">98473230</span>
+
+      <br>
+      <br>
+      <span id="name">Shane</span>
+      <span id="contact">81232132</span>
+
+      <br>
+      <br>
+      <span id="name">Jade</span>
+      <span id="contact1">83573923</span>
+    </span>
+
+
+
+    <span id="wholething2">
+    <h2>Transaction Details</h2>
+        Item Description: Monster Curry
+        <br>
+        <br>
+        Price of Item: $100.20
+    </span>
+<br>
+<br>
+<br>
+<br>
+<span id="wholething3">
+
+
+
+    <form>
+Select Split Option:
+<select id="mySelect">
+  <option value="c1">Equally</option>
+  <option value="c2">Based On Recipient</option>
+  <option value="c3">Customize</option>
+
+</select>
+</form>
+    <br>
+    <input type="button" value="Proceed" onclick="secondfunction()">
+</span>
+
+
+</body>
+</html>

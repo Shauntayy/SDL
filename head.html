@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+    background-color: rgba(60,106,157,0.93);;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 40px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: rgba(60,106,157,0.93);;
+}
+
+  #log{
+      float:right;
+
+  }
+    #log1{
+        float:right;
+    }
+
+.dropbtn {
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+     background-color:rgba(60,106,157,0.93);;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color:rgba(60,106,157,0.93);;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #eee;}
+
+.show {display:block;}
+
+</style>
+
+<body>
+<ul>
+
+  <li><a href="#home">Home</a></li>
+
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About Us</a></li>
+    <li id="log1"><a href="#log">Logout</a></li>
+    <li id="log">
+
+<div class="dropdown">
+<button onclick="myFunction()" class="dropbtn">You have 7 new messages</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#home">Request from Keith</a>
+    <a href="#about">Request from Shaun</a>
+    <a href="#contact">Request from Tristan</a>
+  </div>
+</div>
+
+</li>
+
+</ul>
+
+<script>
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+</body>
+</html>
